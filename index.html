@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *
+  {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .list
+  {
+    background-color: gainsboro;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 25px;
+    color: seagreen;
+    margin: 0 auto;
+    
+  }
+  .main
+  {
+    height: 520px;
+    width: 330px;
+    border-radius: 10px;
+    background-color: seagreen;
+    margin: 0 auto;
+    padding: 20px;
+
+  }
+  #add_box
+  {
+    background-color: seagreen;
+    width: 270px;
+    height: 150px;
+    padding: 20px;
+    position: absolute;
+    border-radius: 10px;
+  }
+  #add_box input
+  {
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 3px;
+  }
+  #add_box button
+  {
+    margin-top: 25px;
+    margin-left: 75px;
+    width: 120px;
+    height: 25px;
+    font-size: 20px;
+    border-radius: 10px;
+
+  }
+
+</style>
+<body>
+  <div id="add_box">
+    <input type="text" id="user">
+  <button onclick="add()">Add</button>
+  </div>
+  <div class="main">
+  
+  <div id="list" class="list">
+  </div>
+</div>
+  <script>
+    var arrtodo = [];
+
+    function add() {
+
+      var user = document.getElementById("user");
+      if(user.value == ""){
+  alert("aby saaly!")
+}
+      arrtodo.unshift(user.value)
+      var join = arrtodo.join("<br>");
+      document.getElementById("list").innerHTML = join ;
+      document.getElementById("user").value = "";
+    }
+
+
+  </script>
+</body>
+
+</html>
